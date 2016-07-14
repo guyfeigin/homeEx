@@ -1,0 +1,56 @@
+<!-- the styling here keeps this hidden when the fragment is loaded -->
+<!-- we only want to show it once the service has done everything it needs to with the page-->
+<!--div class="container js-profile" style="display:none;"> 
+	<div class="panel panel-default">
+		<div class="panel-heading js-profile-heading">
+			<h1>Upload Files</h1>
+		</div>
+		<div class="panel-body">
+
+			<ul class="list-group js-profile-dataList">
+
+				<!-- A piece of markup we will use as a template for injecting our profile data into -->
+				<!-- Note the use of classes & naming convention to avoid conflicts & decouple markup from our JS - ->
+				<li class="list-group-item js-profile-dataList-template">
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+</div-->
+
+<div id="content">
+    <div class="container">
+      <h2>File upload Test for ewd.js</h2>
+      <div class="col-md-12">
+        <h4>ewd upload server status</h4>
+          <h3>
+            <span id="upLoadStatusOff" class="label label-success">UpLoad OFF</span>
+            <span id="upLoadStatusOn" class="label label-primary" style="display: none">Now UpLoading.....</span>
+          </h3>
+      </div>
+      <div class="col-md-12">
+        <h4>Select upload files (multi-select OK) </h4>
+          <form id="upLoadForm" enctype="multipart/form-data" onsubmit="return false;" >
+            <input id="upLoadFile" type="file" name="upload" multiple="multiple"><br>
+              <div id="upLoadSelect">
+              </div>
+            <input id="upLoadSend" type="submit" value="Upload" style="display: none">
+            <input id="upLoadReset" type="reset" value="Reset">
+          </form>
+      </div>
+      <div class="col-md-12">
+        <h4>Upload files List for this Session</h4>
+          <div id="upLoadList">
+            <table class="table table-bordered table-condensed table-striped" id="upLoadListTable" style="word-break: break-all;">
+              <thead>
+                <tr> <th>name</th> <th>path</th> <th>size</th> <th>type</th> <th>lastModifiedDate</th> </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
