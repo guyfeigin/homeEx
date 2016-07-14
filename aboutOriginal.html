@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- test for git -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +50,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Property <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="active"><a href="search.html">Search (Grid View)</a></li>
+                <li><a href="search.html">Search (Grid View)</a></li>
                 <li><a href="search_list.html">Search (List View)</a></li>
                 <li><a href="category.html">Category (Grid View)</a></li>
                 <li><a href="category_list.html">Category (List View)</a></li>
@@ -61,7 +62,7 @@
               <ul class="dropdown-menu">
                 <li><a href="blog.html">Blog Archive</a></li>
                 <li><a href="blog_single.html">Blog Single</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </li>
@@ -78,87 +79,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
-            <div class="quick-search">
-              <div class="row">
-                <form role="form">
-                  <div class="col-md-3 col-sm-3 col-xs-6">
-                    <div class="form-group">
-                      <label for="bedroom">Keyword</label>
-                      <input type="text" class="form-control" placeholder="Enter keyword">
-                    </div>
-                    <div class="form-group">
-                      <label for="bedroom">Bedroom</label>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break -->
-                  <div class="col-md-3 col-sm-3 col-xs-6">
-                    <div class="form-group">
-                      <label for="status">Status</label>
-                      <select class="form-control">
-                        <option>On Sale</option>
-                        <option>For Rent</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="bathroom">Bathroom</label>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break -->
-                  <div class="col-md-3 col-sm-3 col-xs-6">
-                    <div class="form-group">
-                      <label for="type">Type</label>
-                      <select class="form-control">
-                        <option>Villa</option>
-                        <option>Recident</option>
-                        <option>Commercial</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="minprice">Min Price</label>
-                      <select class="form-control">
-                        <option>$4,200</option>
-                        <option>$6,700</option>
-                        <option>$8,150</option>
-                        <option>$11,110</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break -->
-                  <div class="col-md-3 col-sm-3 col-xs-6">
-                    <div class="form-group">
-                      <label for="maxprice">Max Price</label>
-                      <select class="form-control">
-                        <option>$8,200</option>
-                        <option>$11,700</option>
-                        <option>$14,150</option>
-                        <option>$21,110</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="maxprice">&nbsp;</label>
-                      <input type="submit" name="submit" value="Search Again" class="btn btn-warning btn-block">
-                    </div>
-                  </div>
-
-                </form>
-              </div>
+            <div class="page-title">
+              <h2>About</p>
             </div>
             <ol class="breadcrumb">
               <li><a href="#">Home</a></li>
-              <li><a href="#">Search</a></li>
-              <li class="active">Your Keyword</li>
+              <li class="active">About</li>
             </ol>
           </div>
         </div>
@@ -170,258 +96,155 @@
     <div id="content">
       <div class="container">
         <div class="row">
-          <!-- begin:article -->
-          <div class="col-md-9 col-md-push-3">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="heading-title heading-title-alt">
-                  <h3>Property meeting the search criteria</h3>
+          <div class="col-md-12">
+            <div class="blog-container">
+              <div class="blog-content">
+                <div class="blog-image" style="background-image: url(img/img16.jpg);">
+                  <div class="blog-author"><img src="img/logos.png" alt="arillo - Responsive Real Estate Theme"> Arillo - Responsive Real Estate Theme</div>
                 </div>
-              </div>
-            </div>
-            <!-- begin:sorting -->
-            <div class="row sort">
-              <div class="col-md-4 col-sm-4 col-xs-3">
-                <a href="search.html" class="btn btn-warning"><i class="fa fa-th"></i></a>
-                <a href="search_list.html" class="btn btn-default"><i class="fa fa-list"></i></a>
-                <span>Show <strong>6</strong> of <strong>30</strong> result.</span>
-              </div>
-              <div class="col-md-8 col-sm-8 col-xs-9">
-                <form class="form-inline" role="form">
-                  <span>Sort by : </span>
-                  <div class="form-group">
-                    <label class="sr-only" for="sortby">Sort by : </label>
-                    <select class="form-control">
-                      <option>Most Recent</option>
-                      <option>Price (Low &gt; High)</option>
-                      <option>Price (High &gt; Low)</option>
-                      <option>Most Popular (Low &gt; High)</option>
-                    </select>
-                  </div>
-                  <span>Show : </span>
-                  <div class="form-group">
-                    <label class="sr-only" for="show">Show : </label>
-                    <select class="form-control">
-                      <option>6</option>
-                      <option>10</option>
-                      <option>15</option>
-                      <option>20</option>
-                      <option>25</option>
-                      <option>50</option>
-                      <option>100</option>
-                    </select>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <!-- end:sorting -->
-			<div id="products">
-            <!-- begin:product -->
-            <div class="row container-realestate">
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img02.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Offices</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Rent</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">Office</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
+                <div class="blog-title">
+                  <h2>Our Story</h2>
+                  <h3>...Emmm we begind from nothing</h3>
                 </div>
-              </div>
-              <!-- break -->
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img03.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Villa</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Sale</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">Awesome Villa</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- break -->
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img04.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Residential</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Rent</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">Land In Central Park</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- break -->
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img05.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Residential</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Sale</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">Luxury Villa</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- break -->
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img06.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Residential</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Rent</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- break -->
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="property-container">
-                  <div class="property-image">
-                    <img src="img/img04.jpg" alt="mikha real estate theme">
-                    <div class="property-price">
-                      <h4>Residential</h4>
-                      <span>$800,000</span>
-                    </div>
-                    <div class="property-status">
-                      <span>For Sale</span>
-                    </div>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
-                  <div class="property-content">
-                    <h3><a href="#">Land In Central Park</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- break -->
-            </div>
-			</div>
-            <!-- end:product -->
 
-            <!-- begin:pagination -->
-            <div class="row">
-              <div class="col-md-12">
-                <ul class="pagination">
-                  <li class="disabled"><a href="#">&laquo;</a></li>
-                  <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
+                <div class="blog-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum.</p>
+                </div>
+
+                <div class="blog-title">
+                  <h2>Our Team</h2>
+                  <h3>...We are an awesome artist </h3>
+                </div>
+
+                <div class="the-team">
+                  <div class="row container-realestate">
+                    <div class="col-md-4">
+                      <div class="team-container">
+                        <div class="team-image">
+                          <img src="img/team01.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Jane Doe <small>Chief Executive Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="Instagram" rel="tooltip" data-placement="top"><i class="fa fa-instagram"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                    <div class="col-md-4">
+                      <div class="team-container">
+                        <div class="team-image">
+                          <img src="img/team02.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Cen Lung <small>Chief Technology Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="Instagram" rel="tooltip" data-placement="top"><i class="fa fa-instagram"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                    <div class="col-md-4">
+                      <div class="team-container">
+                        <div class="team-image">
+                          <img src="img/team03.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Julia <small>Chief Financial Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="Instagram" rel="tooltip" data-placement="top"><i class="fa fa-instagram"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                    <div class="col-md-4">
+                      <div class="team-container team-dark">
+                        <div class="team-image">
+                          <img src="img/team03.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Marry Jane <small>Chief Information Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span>
+                            <span><a href="#" title="Email" rel="tooltip" data-placement="top"><i class="fa fa-envelope"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                    <div class="col-md-4">
+                      <div class="team-container team-dark">
+                        <div class="team-image">
+                          <img src="img/team01.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Sheryl <small>Chief Marketing Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span>
+                            <span><a href="#" title="Email" rel="tooltip" data-placement="top"><i class="fa fa-envelope"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                    <div class="col-md-4">
+                      <div class="team-container team-dark">
+                        <div class="team-image">
+                          <img src="img/team02.jpg" alt="the team - mikha realestate theme">
+                        </div>
+                        <div class="team-description">
+                          <h3>Kim Jong <small>Chief Security Officer</small></h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <div class="team-social">
+                            <span><a href="#" title="Twitter" rel="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#" title="Facebook" rel="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#" title="Google Plus" rel="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a></span>
+                            <span><a href="#" title="LinkedIn" rel="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a></span>
+                            <span><a href="#" title="Email" rel="tooltip" data-placement="top"><i class="fa fa-envelope"></i></a></span> 
+                          </div>                       
+                        </div>
+                      </div>
+                    </div>
+                    <!-- break -->
+                  </div>
+                </div>
+
               </div>
             </div>
-            <!-- end:pagination -->
           </div>
-          <!-- end:article -->
-
-          <!-- begin:sidebar -->
-          <div class="col-md-3 col-md-pull-9 sidebar">
-            <div class="widget widget-sidebar widget-white">
-              <div class="widget-header">
-                <h3>Recent Property</h3>
-              </div>    
-              <ul>
-                <li><a href="#">Luxury Villa</a></li>
-                <li><a href="#">Land In Central Park</a></li>
-                <li><a href="#">The Urban Life</a></li>
-                <li><a href="#">Luxury Office</a></li>
-                <li><a href="">Luxury Villa In Rego Park</a></li>
-              </ul>
-            </div>
-            <!-- break -->
-            <div class="widget widget-sidebar widget-white">
-              <div class="widget-header">
-                <h3>Property Type</h3>
-              </div>    
-              <ul class="list-check">
-                <li><a href="#">Office</a>&nbsp;(18)</li>
-                <li><a href="#">Office</a>&nbsp;(43)</li>
-                <li><a href="#">Shop</a>&nbsp;(31)</li>
-                <li><a href="#">Villa</a>&nbsp;(52)</li>
-                <li><a href="#">Apartment</a>&nbsp;(8)</li>
-                <li><a href="#">Single Family Home</a>&nbsp;(11)</li>
-              </ul>
-            </div>
-            <!-- break -->
-            <div class="widget widget-sidebar widget-white">
-              <div class="widget-header">
-                <h3>Top Agents</h3>
-              </div>    
-              <ul>
-                <li><a href="#">John Doe</a></li>
-                <li><a href="#">Christoper Drew</a></li>
-                <li><a href="#">Jane Doe</a></li>
-                <li><a href="#">Jeny</a></li>
-              </ul>
-            </div>
-            <!-- break -->
-          </div>
-          <!-- end:sidebar -->
-          
         </div>
       </div>
     </div>
@@ -847,12 +670,5 @@
     <script src="js/jquery.backstretch.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/script.js"></script>
-	<!--guy-->
-	 <script src="/socket.io/socket.io.js"></script> <!--guy -->
-	 <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
-    <script src="/ewdjs/EWD.js"></script>
-    <script type="text/javascript" src="/ewdjs/ewdBootstrap3.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-	<!--end guy-->
   </body>
 </html>

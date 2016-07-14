@@ -1,0 +1,54 @@
+	<!-- begin:modal-signin -->
+    <div class="container"> <!-- id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="modal-signin" aria-hidden="true"-->
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Sign in</h4>
+          </div>
+          <div id="loginPanelBody" class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="emailAddress">Email address</label>
+                <input type="email" id="email" class="form-control input-lg" placeholder="Enter email" value="guyfeigin@gmail.com">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control input-lg" placeholder="Password" value="12345">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="forget"> Keep me logged in
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p>Don't have account ? <a href="#modal-signup"  data-toggle="modal" data-target="#modal-signup">Sign up here.</a></p>
+            <input type="submit" id="loginBtn" class="btn btn-warning btn-block btn-lg" value="Sign in">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end:modal-signin - ->
+<!--div class="modal-dialog">
+  <div id="loginModalPanel" class="modal-content">
+    <div class="modal-header">
+      <h3 id="ewd-loginPanel-title"></h3>
+    </div>
+    <div id="loginPanelBody" class="modal-body">
+      <legend>Authentication</legend>
+      <div class="form-group">
+        <label for="username">ewdMonitor Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter your ewdMonitor Username" />
+      </div>
+      <div id="login-password" class="form-group">
+        <label for="password">Password or Google Authenticator Code</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your Password or Google Authenticator Code" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" id="loginBtn" style="display: none" class="btn btn-primary">Login</a>
+    </div>
+  </div>
+</div-->

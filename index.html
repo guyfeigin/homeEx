@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><!--test for git-->
-<!--test for git 9/3 11:12-->
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +19,10 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
+	 <script src="/socket.io/socket.io.js"></script> <!--guy -->
+	 <!--guy -->
+	 <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css" rel="stylesheet" />
+	<!-- -->	 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -28,11 +31,35 @@
   </head>
 
   <body id="top">
+  
+   <!-- Modal Login Form - ->
 
-    <!-- begin:navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div id="login_Container" class="modal fade"></div-->
+	
+	
+  <!-- NavBar header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <div class="navbar-brand visible-xs" id="ewd-navbar-title-phone"></div>
+          <div class="navbar-brand hidden-xs" id="ewd-navbar-title-other"></div>
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav pull-right" id="navList"></ul>
+        </div>
+      </div>
+    </nav>
+  <!-- comment navbar guy 
+    <!- - begin:navbar - ->
+	<div id="navbar">
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!- - Brand and toggle get grouped for better mobile display - ->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
             <span class="sr-only">Toggle navigation</span>
@@ -43,7 +70,7 @@
           <a class="navbar-brand" href="index.html"><span>Ari<strong>llo.</strong></span></a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!- - Collect the nav links, forms, and other content for toggling - ->
         <div class="collapse navbar-collapse" id="navbar-top">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">Home</a></li>
@@ -69,13 +96,37 @@
             <li><a href="#modal-signin" class="signin" data-toggle="modal" data-target="#modal-signin">Sign in</a></li>
             <li><a href="#" class="signup" data-toggle="modal" data-target="#modal-signup">Sign up</a></li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-    <!-- end:navbar -->
-
+        </div><!-- /.navbar-collapse - ->
+      </div><!-- /.container - ->
+     </nav>
+	</div>
+    <!-- end:navbar - ->
+	<!-- end navbar comment guy -->
+	
+	<!--begin test guy -->
+	 <!-- main CONTAINER -->
+      <!--div id="main_Container" class="container in" style="display: none"></div-->
+	<div id="main_Container" class="container in" ></div>
+      <!-- about CONTAINER -->
+      <div id="about_Container" class="container collapse"></div>
+	   <!-- search CONTAINER -->
+      <div id="search_Container" class="container collapse"></div>
+	     <!-- single CONTAINER -->
+      <div id="single_Container" class="container collapse"></div>
+	   <!-- ulisting CONTAINER -->
+      <div id="ulisting_Container" class="container collapse"></div>
+	  <!--test container -->
+	  <div id="test_Container" class="container collapse"></div>
+	  <!--signin container -->
+	  <div id="signin_Container" class="container collapse"></div>
+	   <!--signup container -->
+	  <div id="signup_Container" class="container collapse"></div>
+	   <!--logout container -->
+	  <div id="logout_Container" class="container collapse"></div>
+	<!-- end test guy -->
+	
     <!-- begin:header -->
-    <div id="header" class="header-slide">
+    <!--div id="header" class="header-slide">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
@@ -103,7 +154,7 @@
                       </select>
                     </div>
                   </div>
-                  <!-- break -->
+                  <!-- break - ->
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
                       <label for="location">Location</label>
@@ -125,7 +176,7 @@
                       </select>
                     </div>
                   </div>
-                  <!-- break -->
+                  <!-- break - ->
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
                       <label for="status">Status</label>
@@ -144,7 +195,7 @@
                       </select>
                     </div>
                   </div>
-                  <!-- break -->
+                  <!-- break - ->
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
                       <label for="type">Type</label>
@@ -175,7 +226,7 @@
     </div>
     <!-- end:header -->
 
-    <!-- begin:service -->
+    <!-- begin:service - ->
     <div id="service">
       <div class="container">
         <div class="row">
@@ -196,7 +247,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-container">
               <div class="service-icon">
@@ -209,7 +260,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-container">
               <div class="service-icon">
@@ -222,7 +273,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-container">
               <div class="service-icon">
@@ -241,9 +292,12 @@
     <!-- end:service -->
 
     <!-- begin:content -->
+	<!-- about CONTAINER -->
+	<!--div id="about_Container" class="container collapse"></div>
+	<!-- - ->
     <div id="content">
       <div class="container">
-        <!-- begin:latest -->
+        <!-- begin:latest - ->
         <div class="row">
           <div class="col-md-12">
             <div class="heading-title">
@@ -251,7 +305,8 @@
             </div>
           </div>
         </div>
-        <div class="row">
+		<div id="latest">
+         <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="property-container">
               <div class="property-image">
@@ -274,7 +329,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="property-container">
@@ -298,7 +353,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="property-container">
@@ -322,7 +377,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="property-container">
@@ -346,11 +401,12 @@
               </div>
             </div>
           </div>
-          <!-- break -->
-        </div>
+          <!-- break - ->
+		 </div> 
+		</div> 
         <!-- end:latest -->
 
-        <!-- begin:for-sale -->
+        <!-- begin:for-sale - ->
         <div class="row">
           <div class="col-md-12">
             <div class="heading-title">
@@ -381,7 +437,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="property-container">
@@ -405,7 +461,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="property-container">
@@ -429,11 +485,11 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
         </div>
         <!-- end:for-sale -->
 
-        <!-- begin:for-rent -->
+        <!-- begin:for-rent - ->
         <div class="row">
           <div class="col-md-12">
             <div class="heading-title">
@@ -467,7 +523,7 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
 
           <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="property-container">
@@ -494,14 +550,14 @@
               </div>
             </div>
           </div>
-          <!-- break -->
+          <!-- break - ->
         </div>
-        <!-- end:for-rent -->
+        <!-- end:for-rent - ->
       </div>
     </div>
     <!-- end:content -->
 
-    <!-- begin:testimony -->
+    <!-- begin:testimony - ->
     <div id="testimony" style="background-image: url(img/img17.jpg);">
       <div class="container">
         <div class="row">
@@ -895,7 +951,7 @@
     <!-- end:footer -->
 
     <!-- begin:modal-signin -->
-    <div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="modal-signin" aria-hidden="true">
+    <!--div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="modal-signin" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -928,7 +984,7 @@
     </div>
     <!-- end:modal-signin -->
 
-    <!-- begin:modal-signup -->
+    <!-- begin:modal-signup - ->
     <div class="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="modal-signup" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -977,5 +1033,20 @@
     <script src="js/jquery.backstretch.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/script.js"></script>
+	<!-- for ewd.js. --------- guy -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+    <!--script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script- ->
+    <script src="//www.fuelcdn.com/fuelux/2.4.1/loader.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.js"></script-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/excanvas.min.js"></script><![endif]- ->
+    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script-->
+    <script src="/ewdjs/EWD.js"></script>
+    <script type="text/javascript" src="/ewdjs/ewdBootstrap3.js"></script>
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+	<!-- -->
   </body>
 </html>

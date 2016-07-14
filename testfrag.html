@@ -1,0 +1,54 @@
+<div class="row" id="testPageLoaded">
+  <div class="col-md-12">
+    <h1>My test fragment</h1>
+    <h3>Build x</h3>
+    <h4>10 February 2014</h4>
+	<h4>???? ??? ?????</h4>
+    <h5>&copy; 2014 <a href="http://www.mgateway.com" target="mgw">M/Gateway Developments Ltd</a></h5>
+	<textarea rows="4" cols="50" id = "textarea1">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+</textarea>
+<!-- test guy -->
+			<div class="form-group">
+              <label for="maxprice">&nbsp;</label>
+              <input type="submit"  name="submit" value="Test" class="btn btn-warning btn-block"  id="testBtn">
+            </div>
+			<!-- end test guy -->
+			<!-->try to upload file to server <-->
+			
+		 <div id="content">
+    <div class="container">
+      <h2>File upload Test for ewd.js</h2>
+      <div class="col-md-12">
+        <h4>ewd upload server status</h4>
+          <h3>
+            <span id="upLoadStatusOff" class="label label-success">UpLoad OFF</span>
+            <span id="upLoadStatusOn" class="label label-primary" style="display: none">Now UpLoading.....</span>
+          </h3>
+      </div>
+      <div class="col-md-12">
+        <h4>Select upload files (multi-select OK) </h4>
+          <form id="upLoadForm" enctype="multipart/form-data" onsubmit="return false;" >
+            <input id="upLoadFile" type="file" name="upload" multiple="multiple"><br>
+              <div id="upLoadSelect">
+              </div>
+            <input id="upLoadSend" type="submit" value="Upload" style="display: none">
+            <input id="upLoadReset" type="reset" value="Reset">
+          </form>
+      </div>
+      <div class="col-md-12">
+        <h4>Upload files List for this Session</h4>
+          <div id="upLoadList">
+            <table class="table table-bordered table-condensed table-striped" id="upLoadListTable" style="word-break: break-all;">
+              <thead>
+                <tr> <th>name</th> <th>path</th> <th>size</th> <th>type</th> <th>lastModifiedDate</th> </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
