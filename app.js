@@ -9,6 +9,17 @@ EWD.application = {
     'ewd-navbar-title-phone': 'Home Exchange App',                    // *** Change as needed
     'ewd-navbar-title-other': 'HomeExchange Application'    // *** Change as needed
   },
+  /*from ewdUplaod*/
+  setStatus: function(status){
+      if(status){
+          $('#upLoadStatusOff').hide();
+          $('#upLoadStatusOn').show();
+      }else{
+          $('#upLoadStatusOff').show();
+          $('#upLoadStatusOn').hide();
+      }
+  },
+   /*end from ewdUplaod*/
   navFragments: {
     main: {
       cache: true
@@ -28,7 +39,7 @@ EWD.application = {
   },
 
   onStartup: function() {
-	 /* micro servuce test start */
+	 /* micro servuce test start 
 	 console.log('app.js: invoking EWD.require to load the uploadService front-end service');
 
     EWD.require({
@@ -39,6 +50,8 @@ EWD.application = {
       }
     });
 	/* micro servuce test end */
+	
+	
 	
     // Enable tooltips
     $('[data-toggle="tooltip"]').tooltip();
@@ -126,8 +139,21 @@ EWD.application = {
 				$('#profile-childrensNo').val(childrensNo);
 				$('#profile-title').val(profileTitle);
 				$('#profile-desc').val(profileDesc);
+				//load images of the house
+				EWD.loadImages(messageObj);
+				
 	};
-	
+	EWD.loadImages = function(messageObj){
+		$('#firstImage').attr("src",messageObj.data.houseId[101].pic[1]);
+		
+		 $('#upLoadListTable tbody').empty();
+        jQuery.each(messageObj.data.houseId[101].pic, function(val, obj) {
+          html  = '<tr><td>' + obj.name + '</td><td>' + obj.path + '</td>';
+          html += '<td>' + obj.size + '</td><td>' + obj.type + '</td>';
+          html += '<td>' + obj.lastModifiedDate + '</td></tr>';
+          $('#upLoadListTable tbody').append(html); 
+        });
+	}
 	EWD.signIn = function(fullLogin) {
       //$('#ewd-loginPanel-title').text('EWD.js Monitor');
 
@@ -372,11 +398,68 @@ EWD.application = {
 			  bathroom : $( "#bathroom option:selected" ).text() || ''
             });
           });
+		  
+	 /* start of from ewdUpLoad */
+	$('#upLoadReset').click(function(e) {
+      e.preventDefault();
+      $('#upLoadSend').hide();
+    });
+
+    $('#upLoadFile').change(function(e) {
+      e.preventDefault();
+      var files = this.files;
+      // console.log('--- files = \n', files);
+      if (files.length>0) {
+        $('#upLoadSend').show();
+      } else {
+        $('#upLoadSend').hide();
+      }
+    });
+
+    // Start upLoad Server -> Send files -> Close upLoad Server
+    $('#upLoadForm').submit(function(e){
+      e.preventDefault();
+      EWD.sockets.sendMessage({
+        type : 'fileUpLodeListen',  params: {},
+        done: function(messageObj) {
+          if(messageObj.message.upserver){
+            var port = messageObj.message.uploadPort;
+            var upLoadUrl  = messageObj.message.uploadUrl;
+            console.log('----- Start Listen upLoad Server port No:' + port);
+            EWD.application.setStatus(true);
+            var fd = new FormData($('#upLoadForm').get(0));
+            // Send files by $.ajax
+            $.ajax({
+                url: 'http://' + location.hostname + ':' + port + '/' + upLoadUrl,
+                type: 'POST',
+                data: fd,
+                processData: false,
+                contentType: false,
+                dataType: 'json'
+              })
+              .done(function( data ) {
+                console.log('----- success files upLoad!');
+                EWD.application.setStatus(false);
+                EWD.sockets.sendMessage({ type : 'fileUpLodeUnref', params: {} });
+                toastr.success('upload Success');
+              })
+              .fail(function( jqXHR, textStatus, errorThrown ) {
+                EWD.application.setStatus(false);
+                EWD.sockets.sendMessage({ type : 'fileUpLodeUnref', params: {} });
+                toastr.error('upload Error' + textStatus);
+              });
+              // End of $.ajax
+          }  // End of if upserver
+          $('#upLoadReset').click();
+        }  // End of Done by fileUpLodeListen
+      });  // End of EWD.sockets.sendMessage fileUpLodeListen
+    });  // End of submit
+	/* end of from ewdUpLoad */
 	}
   },
 
   onMessage: {
-	  /*
+	  
 	  //####start taken from file upload
 	upLoadList: function(messageObj) {
       var html ;
@@ -396,7 +479,7 @@ EWD.application = {
       }
     },
 	//####end taken from file upload
-	*/
+	
     // add handlers that fire after JSON WebSocket messages are received from back-end
 	getSingle : function(messageObj) {
 		var accomodate = messageObj.message.accomodate;
@@ -750,9 +833,9 @@ EWD.application = {
  
 
 };
-/*
+
 //##########start taken from file upload
-EWD.onSocketsReady = function() {
+/* commented because causing Ext not defined. guy EWD.onSocketsReady = function() {
     for (id in EWD.application.labels) {
         try {
             document.getElementById(id).innerHTML = EWD.application.labels[id];
@@ -763,9 +846,9 @@ EWD.onSocketsReady = function() {
 };
 EWD.onSocketMessage = function(messageObj) {
     if (EWD.application.messageHandlers) EWD.application.messageHandlers(messageObj);
-};
+}; */
 //##########end taken from file upload
-*/
+
 
 
 
