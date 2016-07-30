@@ -302,9 +302,9 @@
                         
                         <h3>Upload pictures of your home</h3>
 	 <div class="col-md-12">
-      <h2>File upload Test for ewd.js</h2>
+      <!--h2>File upload Test for ewd.js</h2-->
       <div class="col-md-12">
-        <h4>ewd upload server status</h4>
+        <h4>Is loading ? </h4>
           <h3>
             <span id="upLoadStatusOff" class="label label-success">UpLoad OFF</span>
             <span id="upLoadStatusOn" class="label label-primary" style="display: none">Now UpLoading.....</span>
@@ -315,12 +315,15 @@
           <form id="upLoadForm" enctype="multipart/form-data" onsubmit="return false;" >
             <input id="upLoadFile" type="file" name="upload" multiple="multiple"><br>
               <div id="upLoadSelect">
-              </div>
-            <input id="upLoadSend" type="submit" value="Upload" style="display: none">
-            <input id="upLoadReset" type="reset" value="Reset">
+        
+               <input id="upLoadSend" type="submit" value="Upload" style="display: none">
+               <input id="upLoadReset" type="reset" value="Reset">
+			  </div>
           </form>
+		    <br>
       </div>
-      <div class="col-md-12">
+	
+      <!--div class="col-md-12">
         <h4>Upload files List for this Session</h4>
           <div id="upLoadList">
             <table class="table table-bordered table-condensed table-striped" id="upLoadListTable" style="word-break: break-all;">
@@ -331,7 +334,8 @@
               </tbody>
             </table>
           </div>
-      </div>
+      </div-->
+	  <!--this div id="ulistingProducts" will be filled with pictures of the house -->
 	   <div id="ulistingProducts">
             <!-- begin:product -->
             <div class="row container-realestate">
@@ -339,26 +343,54 @@
                 <div class="property-container">
                   <div class="property-image" >
                     <img src="img/img02.jpg" alt="mikha real estate theme" id="firstImage">
-                    <div class="property-price">
+                    <!--div class="property-price">
                       <h4>Offices</h4>
                       <span>$800,000</span>
                     </div>
                     <div class="property-status">
                       <span>For Rent</span>
-                    </div>
+                    </div-->
                   </div>
-                  <div class="property-features">
+                  <!--div class="property-features">
                     <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
                     <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
                     <span><i class="fa fa-male"></i> 2 Bath</span>
-                  </div>
+                  </di-->
                   <div class="property-content">
-                    <h3><a href="#">Office</a> <small>22, JJ Road, Yogyakarta</small></h3>
+				  <input type="checkbox" name="vehicle" value="Car">check to confirm delete
+				  <button type="button" class ="deletePicBtn" value="img/img02.jpg">Click to delete!</button>
+                    <!--h3><a href="#">Office</a> <small>22, JJ Road, Yogyakarta</small></h3-->
                   </div>
                 </div>
               </div>
 			</div>
-		<div class="col-md-12">
+			<div class="row container-realestate">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="property-container">
+                  <div class="property-image" >
+                    <img src="img/img03.jpg" alt="mikha real estate theme" id="firstImage">
+                    <!--div class="property-price">
+                      <h4>Offices</h4>
+                      <span>$800,000</span>
+                    </div>
+                    <div class="property-status">
+                      <span>For Rent</span>
+                    </div-->
+                  </div>
+                  <!--div class="property-features">
+                    <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
+                    <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
+                    <span><i class="fa fa-male"></i> 2 Bath</span>
+                  </di-->
+                  <div class="property-content">
+				  <input type="checkbox" name="vehicle" value="Car">check to delete
+                    <!--h3><a href="#">Office</a> <small>22, JJ Road, Yogyakarta</small></h3-->
+                  </div>
+                </div>
+              </div>
+			</div>
+		</div>
+		<!--div class="col-md-12">
         <h4>Upload files List for this Session</h4>
           <div id="upLoadList">
             <table class="table table-bordered table-condensed table-striped" id="upLoadListTable" style="word-break: break-all;">
@@ -369,7 +401,26 @@
               </tbody>
             </table>
           </div>
+      </div-->
+		 <div class="col-md-12">
+        <h4>Delete files test </h4>
+         <form id="deleteFilesForm" enctype="multipart/form-data" onsubmit="return false;" >
+            <!--input id="upLoadFile" type="file" name="upload" multiple="multiple"><br-->
+              <div id="deleteSelect">
+           
+               <input id="deleteFile" type="submit" value="Upload" >
+               <input id="upLoadReset" type="reset" value="Reset">
+			  </div>
+			 
+          </form>
+		    <br>
+			
+			  <div class="form-group" id="deletePicturesForm">
+			    <!--label for="maxprice">&nbsp;</label-->
+				<input type="submit"  name="submit" value="delete pictures test" class="btn btn-warning btn-block"  id="DeletePicturesBtn">
+			   </div>
       </div>
+		
 		</div>
 	  <!--div id="products">
             <!-- begin:product - ->

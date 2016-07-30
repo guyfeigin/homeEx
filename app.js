@@ -143,16 +143,62 @@ EWD.application = {
 				EWD.loadImages(messageObj);
 				
 	};
+	EWD.enablePopovers = function() {
+		//delete a picture from server	
+		$(".deletePicBtn").on('click', function(e) {
+		  // $('#deletePicBtn').click(function(e) {
+			 var imgName = this.value;
+			 EWD.sockets.submitForm({
+			
+          fields: {
+            imgName: imgName
+          },
+          messageType: 'EWD.form.deletePictures',
+		  id : 'deletePicturesForm',
+          alertTitle: 'Update Error',
+          toastr: {
+            target: 'ulisting_Container'
+          },
+          done: function(messageObj) {
+            if(messageObj.ok) {
+				//toastr.clear();
+			    //toastr.success('Your house pictures has been deleted succesfuly', { timeOut: 4500 });
+            }
+			
+          }
+          });
+			 
+		});
+		
+	};
 	EWD.loadImages = function(messageObj){
 		$('#firstImage').attr("src",messageObj.data.houseId[101].pic[1]);
 		
-		 $('#upLoadListTable tbody').empty();
+		 $('#ulistingProducts').empty();
+		 var html = '<div class="row container-realestate">';
         jQuery.each(messageObj.data.houseId[101].pic, function(val, obj) {
-          html  = '<tr><td>' + obj.name + '</td><td>' + obj.path + '</td>';
-          html += '<td>' + obj.size + '</td><td>' + obj.type + '</td>';
-          html += '<td>' + obj.lastModifiedDate + '</td></tr>';
-          $('#upLoadListTable tbody').append(html); 
+          //html  = '<tr><td>' + obj.name + '</td><td>' + obj.path + '</td>';
+          //html += '<td>' + obj.size + '</td><td>' + obj.type + '</td>';
+          //html += '<td>' + obj.lastModifiedDate + '</td></tr>';
+          
+		  <!-- begin:product -->
+             
+		html +=
+			' <div class="col-md-4 col-sm-6 col-xs-12">' +
+			'                <div class="property-container">' +
+			'                  <div class="property-image" >' +
+			'                    <img src= ' + obj +  ' alt="mikha real estate theme" id="firstImage">' +
+			'                    </div>' +
+			'               <div class="property-content">' +
+			'	  <input type="checkbox" name="vehicle" value="Car">check to confirm delete' +
+			'	  <button type="button" class="deletePicBtn"  value= ' + obj + '>Click to delete!</button>' +    
+            '      </div>' +
+			'                  </div>' +
+			'              </div>';
         });
+		 $('#ulistingProducts').append(html);
+		 
+		 EWD.enablePopovers();
 	}
 	EWD.signIn = function(fullLogin) {
       //$('#ewd-loginPanel-title').text('EWD.js Monitor');
@@ -387,6 +433,60 @@ EWD.application = {
           }
         });
             });
+
+		//delete a picture from server	
+		/*$(".deletePicBtn").on('click', function(e) {
+		  // $('#deletePicBtn').click(function(e) {
+			 var imgName = this.value;
+			 EWD.sockets.submitForm({
+			
+          fields: {
+            imgName: imgName
+          },
+          messageType: 'EWD.form.deletePictures',
+		  id : 'deletePicturesForm',
+          alertTitle: 'Update Error',
+          toastr: {
+            target: 'ulisting_Container'
+          },
+          done: function(messageObj) {
+            if(messageObj.ok) {
+				//toastr.clear();
+			    //toastr.success('Your house pictures has been deleted succesfuly', { timeOut: 4500 });
+            }
+			
+          }
+          });
+			 
+		});*/
+		//delete selected pictures from server. guy
+	    /*$('#DeletePicturesBtn').on('click', function(e) {
+			
+		EWD.sockets.submitForm({
+			
+          fields: {
+            profileName: $('#profile-name').val(),
+			groupNo: $('#profile-groupNo').val(),
+            adultsNo: $('#profile-adultsNo').val(),
+			childrensNo : $('#profile-childrensNo').val(),
+			profileTitle : $('#profile-title').val(),
+			profileDesc:$('#profile-desc').val()
+          },
+          messageType: 'EWD.form.deletePictures',
+		  id : 'deletePicturesForm',
+          alertTitle: 'Update Error',
+          toastr: {
+            target: 'ulisting_Container'
+          },
+          done: function(messageObj) {
+            if(messageObj.ok) {
+				//toastr.clear();
+			    //toastr.success('Your house pictures has been deleted succesfuly', { timeOut: 4500 });
+            }
+			
+          }
+        });
+            });	*/	
 	},
 	'testfrag.html': function() {
 		 $('#testBtn').on('click', function(e) {
@@ -415,7 +515,20 @@ EWD.application = {
         $('#upLoadSend').hide();
       }
     });
-
+	///delete files in server. guy
+	/*$('#deleteFilesForm').submit(function(e) {
+      e.preventDefault();
+	    EWD.sockets.sendMessage({
+        type : 'fileUpLodeDelete',  params: {
+			fileName: 'rc30',
+			fileName2: 'img01'
+		},
+        done: function(messageObj) {
+			   console.log('----- success files delete!');
+		 }  // End of Done by fileDelete
+      });  // End of EWD.sockets.sendMessage fileDelete
+      
+    });*/
     // Start upLoad Server -> Send files -> Close upLoad Server
     $('#upLoadForm').submit(function(e){
       e.preventDefault();
@@ -477,6 +590,19 @@ EWD.application = {
       if(!messageObj.message.upserver){
         console.log('----- Close upLoad Server');
       }
+    },
+	//message from server that says if deletion went o.k. guy
+	deletePictures : function(messageObj){
+      if(!messageObj.ok){
+        console.log('----- error deleting picture' + messageObj.error.path + " " + messageObj.error.code);
+		//toastr.clear();
+	    toastr.error('----- error deleting picture' + messageObj.error.path + " " + messageObj.error.code, { timeOut: 4500 });
+      }
+	   if(messageObj.ok) {
+		   
+			//toastr.clear();
+		    toastr.success('Your house pictures has been deleted succesfuly', { timeOut: 4500 });
+	   }
     },
 	//####end taken from file upload
 	
