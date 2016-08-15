@@ -172,11 +172,11 @@ EWD.application = {
 		
 	};
 	EWD.loadImages = function(messageObj){
-		$('#firstImage').attr("src",messageObj.data.houseId[101].pic[1]);
+		//$('#firstImage').attr("src",messageObj.data.houseId[101].pic[1]);
 		
 		 $('#ulistingProducts').empty();
 		 var html = '<div class="row container-realestate">';
-        jQuery.each(messageObj.data.houseId[101].pic, function(val, obj) {
+         jQuery.each(messageObj.data.houseId[101].pic, function(val, obj) {
           //html  = '<tr><td>' + obj.name + '</td><td>' + obj.path + '</td>';
           //html += '<td>' + obj.size + '</td><td>' + obj.type + '</td>';
           //html += '<td>' + obj.lastModifiedDate + '</td></tr>';
@@ -187,11 +187,11 @@ EWD.application = {
 			' <div class="col-md-4 col-sm-6 col-xs-12">' +
 			'                <div class="property-container">' +
 			'                  <div class="property-image" >' +
-			'                    <img src= ' + obj +  ' alt="mikha real estate theme" id="firstImage">' +
+			'                    <img src= ' + val +  ' alt="mikha real estate theme" id="firstImage">' +
 			'                    </div>' +
 			'               <div class="property-content">' +
 			'	  <input type="checkbox" name="vehicle" value="Car">check to confirm delete' +
-			'	  <button type="button" class="deletePicBtn"  value= ' + obj + '>Click to delete!</button>' +    
+			'	  <button type="button" class="deletePicBtn"  value= ' + val + '>Click to delete!</button>' +    
             '      </div>' +
 			'                  </div>' +
 			'              </div>';
@@ -433,6 +433,21 @@ EWD.application = {
           }
         });
             });
+		$('#upLoadReset').click(function(e) {
+      e.preventDefault();
+      $('#upLoadSend').hide();
+    });
+
+    $('#upLoadFile').change(function(e) {
+      e.preventDefault();
+      var files = this.files;
+      // console.log('--- files = \n', files);
+      if (files.length>0) {
+        $('#upLoadSend').show();
+      } else {
+        $('#upLoadSend').hide();
+      }
+    });	
 
 		//delete a picture from server	
 		/*$(".deletePicBtn").on('click', function(e) {
@@ -554,6 +569,7 @@ EWD.application = {
                 console.log('----- success files upLoad!');
                 EWD.application.setStatus(false);
                 EWD.sockets.sendMessage({ type : 'fileUpLodeUnref', params: {} });
+				EWD.sockets.sendMessage({ type : 'fileImageRefresh', params: {} });
                 toastr.success('upload Success');
               })
               .fail(function( jqXHR, textStatus, errorThrown ) {
@@ -605,7 +621,10 @@ EWD.application = {
 	   }
     },
 	//####end taken from file upload
-	
+	//refresh images after we delete an imagen from server
+	 refreshImages: function(messageObj){
+       EWD.loadImages(messageObj);
+    },
     // add handlers that fire after JSON WebSocket messages are received from back-end
 	getSingle : function(messageObj) {
 		var accomodate = messageObj.message.accomodate;

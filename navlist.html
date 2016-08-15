@@ -14,9 +14,13 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-top">
-          <ul class="nav navbar-nav navbar-right">
+          <!--ul class="nav navbar-nav navbar-right"-->
+		    <div class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">Home!</a></li>
-            <li class="dropdown">
+			 <li id="main_Nav" data-header="main"><a href="#">Main</a></li>
+			 <li id="about_Nav" data-header="about"><a href="#">About</a></li>
+		   	<li id="search_Nav" data-header="search"><a href="#">search</a></li>
+            <!--li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Property <b class="caret"></b></a>
               <ul class="dropdown-menu">
 			    <li id="about_Nav" data-header="about"><a href="#">about</a></li>
@@ -42,6 +46,7 @@
             <li><a href="#" class="signup" data-toggle="modal" data-target="#modal-signup">Sign up</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
+		</div>  <!--div class="nav navbar-nav navbar-right"-->
       </div><!-- /.container -->
     </nav>
     <!-- end:navbar -->
