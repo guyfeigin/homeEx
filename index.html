@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--test remark for git test -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,31 +36,11 @@
    <!-- Modal Login Form - ->
 
     <div id="login_Container" class="modal fade"></div-->
-	
-	
-  <!-- NavBar header -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+	 <!-- NavBar header -->
+    
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <div class="navbar-brand visible-xs" id="ewd-navbar-title-phone"></div>
-          <div class="navbar-brand hidden-xs" id="ewd-navbar-title-other"></div>
-          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav pull-right" id="navList"></ul>
-        </div>
-      </div>
-    </nav>
-  <!-- comment navbar guy 
-    <!- - begin:navbar - ->
-	<div id="navbar">
-     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!- - Brand and toggle get grouped for better mobile display - ->
+ <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
             <span class="sr-only">Toggle navigation</span>
@@ -67,46 +48,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><span>Ari<strong>llo.</strong></span></a>
-        </div>
-
-        <!- - Collect the nav links, forms, and other content for toggling - ->
-        <div class="collapse navbar-collapse" id="navbar-top">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Property <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="search.html">Search (Grid View)</a></li>
-                <li><a href="search_list.html">Search (List View)</a></li>
-                <li><a href="category.html">Category (Grid View)</a></li>
-                <li><a href="category_list.html">Category (List View)</a></li>
-                <li><a href="single.html">Single page</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">Blog Archive</a></li>
-                <li><a href="blog_single.html">Blog Single</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-            <li><a href="#modal-signin" class="signin" data-toggle="modal" data-target="#modal-signin">Sign in</a></li>
-            <li><a href="#" class="signup" data-toggle="modal" data-target="#modal-signup">Sign up</a></li>
+          <a class="navbar-brand" href="index.html"><span>Home<strong>swap.</strong></span></a>
+        </div>	 
+		<div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-right" id="navList">
+				<li id="navbar-username" data-header="username"><a href="#"></a></li>
+                <!--li class="active"><a href="index.html">Home!</a></li-->
+			    <li id="main_Nav" data-header="main"><a href="#">Main</a></li>
+				<li id="about_Nav" data-header="about"><a href="#">About</a></li>
+				<li id="search_Nav" data-header="search"><a href="#">search</a></li>
+				<li id="single_Nav" data-header="single"><a href="#">single</a></li>
+				<li id="ulisting_Nav" data-header="yourlistings"><a href="#">your listings</a></li>
+				<li id="test_Nav" data-header="test"><a href="#">test</a></li>
+				<!--li id="signin_Nav" data-header="signin"><a href="#">sign in</a></li-->
+			    <li id="signin_Nav" data-header="signin"><a href="#" class="signin" data-toggle="modal" data-target="#modal-signin">Sign in</a></li>
+				<!--li id="signup_Nav" data-header="signup"><a href="#">sign up</a></li-->
+			    <li id="signup_Nav" data-header="signup"><a href="#" class="signup" data-toggle="modal" data-target="#modal-signup">Sign up</a></li>
+				<li id="logout_Nav" data-header="logout"><a href="#">Log Out</a></li>
           </ul>
-        </div><!-- /.navbar-collapse - ->
-      </div><!-- /.container - ->
-     </nav>
-	</div>
-    <!-- end:navbar - ->
-	<!-- end navbar comment guy -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- main menu -->
+    <ul class="nav nav-pills nav-stacked collapse" id="ewd-mainMenu">
+        <li class="nav-header disabled"><a id="ewd-menu-title"></a></li>
+    </ul>
 	
-	<!--begin test guy -->
-	 <!-- main CONTAINER -->
-	  <!--div id="navlist_Container" class="container in" style="display: none"></div-->
-	  <!--div id="navlist_Container" class="container in" ></div>
+	
       <!--div id="main_Container" class="container in" style="display: none"></div-->
 	  <div id="main_Container" class="container in" ></div>
       <!-- about CONTAINER -->
@@ -125,495 +94,7 @@
 	  <div id="signup_Container" class="container collapse"></div>
 	   <!--logout container -->
 	  <div id="logout_Container" class="container collapse"></div>
-	<!-- end test guy -->
 	
-    <!-- begin:header - ->
-    <div id="header" class="header-slide">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="quick-search">
-              <div class="row">
-                <form role="form">
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="form-group">
-                      <label for="country">Country</label>
-                      <select class="form-control">
-                        <option>Australia</option>
-                        <option>Indonesia</option>
-                        <option>Japan</option>
-                        <option>South Korea</option>
-                        <option>China</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="bedroom">Bedroom</label>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break - ->
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="form-group">
-                      <label for="location">Location</label>
-                      <select class="form-control">
-                        <option>Tasmania</option>
-                        <option>Yogyakarta</option>
-                        <option>Tokyo</option>
-                        <option>Busan</option>
-                        <option>Taipe</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="bathroom">Bathroom</label>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break - ->
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="form-group">
-                      <label for="status">Status</label>
-                      <select class="form-control">
-                        <option>For Sale</option>
-                        <option>For Rent</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="minprice">Min Price</label>
-                      <select class="form-control">
-                        <option>$4,200</option>
-                        <option>$6,700</option>
-                        <option>$8,150</option>
-                        <option>$11,110</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- break - ->
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="form-group">
-                      <label for="type">Type</label>
-                      <select class="form-control">
-                        <option>Villa</option>
-                        <option>Recident</option>
-                        <option>Commercial</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="maxprice">Max Price</label>
-                      <select class="form-control">
-                        <option>$8,200</option>
-                        <option>$11,700</option>
-                        <option>$14,150</option>
-                        <option>$21,110</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-12 col-sm-12"><input type="submit" name="submit" value="Search" class="btn btn-warning btn-lg btn-block"></div>
-
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end:header -->
-
-    <!-- begin:service - ->
-    <div id="service">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Best Real Estate Deals <small>You need to do is very simple just join us</small></h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-container">
-              <div class="service-icon">
-                <a href="#"><i class="fa fa-home"></i></a>
-              </div>
-              <div class="service-content">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt.</p>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-container">
-              <div class="service-icon">
-                <a href="#"><i class="fa fa-thumbs-up"></i></a>
-              </div>
-              <div class="service-content">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt.</p>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-container">
-              <div class="service-icon">
-                <a href="#"><i class="fa fa-umbrella"></i></a>
-              </div>
-              <div class="service-content">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt.</p>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-container">
-              <div class="service-icon">
-                <a href="#"><i class="fa fa-lock"></i></a>
-              </div>
-              <div class="service-content">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>  
-    </div>
-    <!-- end:service -->
-
-    <!-- begin:content -->
-	<!-- about CONTAINER -->
-	<!--div id="about_Container" class="container collapse"></div>
-	<!-- - ->
-    <div id="content">
-      <div class="container">
-        <!-- begin:latest - ->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="heading-title">
-              <h2>Latest Real Estate</h2>
-            </div>
-          </div>
-        </div>
-		<div id="latest">
-         <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img02.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Residential</h4>
-                  <span>$800,000</span>
-                </div>
-                <div class="property-status">
-                  <span>For Sale</span>
-                </div>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img03.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Villa</h4>
-                  <span>$300,000<small>/year</small></span>
-                </div>
-                <div class="property-status">
-                  <span>For Rent</span>
-                </div>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img04.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Commercial</h4>
-                  <span>$800,000</span>
-                </div>
-                <div class="property-status">
-                  <span>For Sale</span>
-                </div>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img05.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Residential</h4>
-                  <span>$800,000<small>/year</small></span>
-                </div>
-                <div class="property-status">
-                  <span>For Rent</span>
-                </div>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-		 </div> 
-		</div> 
-        <!-- end:latest -->
-
-        <!-- begin:for-sale - ->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="heading-title">
-              <h2>Real Estate For Sale</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img06.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Residential</h4>
-                  <span>$800,000</span>
-                </div>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-                <span><i class="fa fa-car"></i> 2 Garages</span>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img07.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Residential</h4>
-                  <span>$800,000</span>
-                </div>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 6,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 3 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-                <span><i class="fa fa-building-o"></i> 2 Floors</span>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="property-container">
-              <div class="property-image">
-                <img src="img/img08.jpg" alt="arillo real estate theme">
-                <div class="property-price">
-                  <h4>Residential</h4>
-                  <span>$800,000</span>
-                </div>
-              </div>
-              <div class="property-content">
-                <h3><a href="#">The Urban Life</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div class="property-features">
-                <span><i class="fa fa-home"></i> 5,000 m<sup>2</sup></span>
-                <span><i class="fa fa-hdd-o"></i> 2 Bed</span>
-                <span><i class="fa fa-male"></i> 2 Bath</span>
-                <span><i class="fa fa-building-o"></i> 1 Floor</span>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-        </div>
-        <!-- end:for-sale -->
-
-        <!-- begin:for-rent - ->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="heading-title">
-              <h2>Real Estate For Rent</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-sm-12 col-xs-12">
-            <div class="property-container">
-              <div class="property-content-list">
-                <div class="property-image-list">
-                  <img src="img/img09.jpg" alt="arillo real estate theme">
-                  <div class="property-price">
-                    <h4>Villa</h4>
-                    <span>$30,000<small>/month</small></span>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 7,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 3 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                    <span><i class="fa fa-building-o"></i> 2 Floors</span>
-                    <span><i class="fa fa-car"></i> 2 Garages</span>
-                  </div>
-                </div>
-                <div class="property-text">
-                  <h3><a href="#">Luxury Villa In Rego Park</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-
-          <div class="col-md-6 col-sm-12 col-xs-12">
-            <div class="property-container">
-              <div class="property-content-list">
-                <div class="property-text">
-                  <h3><a href="#">Land In Central Park</a> <small>22, JJ Road, Yogyakarta</small></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="property-image-list">
-                  <img src="img/img10.jpg" alt="arillo real estate theme">
-                  <div class="property-price">
-                    <h4>Villa</h4>
-                    <span>$30,000<small>/month</small></span>
-                  </div>
-                  <div class="property-features">
-                    <span><i class="fa fa-home"></i> 7,000 m<sup>2</sup></span>
-                    <span><i class="fa fa-hdd-o"></i> 3 Bed</span>
-                    <span><i class="fa fa-male"></i> 2 Bath</span>
-                    <span><i class="fa fa-building-o"></i> 2 Floors</span>
-                    <span><i class="fa fa-car"></i> 2 Garages</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- break - ->
-        </div>
-        <!-- end:for-rent - ->
-      </div>
-    </div>
-    <!-- end:content -->
-
-    <!-- begin:testimony - ->
-    <div id="testimony" style="background-image: url(img/img17.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div id="testislider" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="item active">
-                  <div class="testimony-container">
-                    <div class="testimony-image" style="background: url(img/team01.jpg)"></div>
-                    <div class="testimony-content">
-                      <h3>Jane Doe</h3>
-                      <blockquote>
-                        <p>Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis</p>
-                      </blockquote>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimony-container">
-                    <div class="testimony-image" style="background: url(img/team02.jpg)"></div>
-                    <div class="testimony-content">
-                      <h3>Cen Lung</h3>
-                      <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                      </blockquote>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimony-container">
-                    <div class="testimony-image" style="background: url(img/team03.jpg)"></div>
-                    <div class="testimony-content">
-                      <h3>Julia</h3>
-                      <blockquote>
-                        <p>Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</p>
-                      </blockquote>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a class="left carousel-control" href="#testislider" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#testislider" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end:testimony -->
 
     <!-- begin:news -->
     <div id="news">
@@ -629,7 +110,7 @@
               </div>
             </div>
             <!-- break -->
-
+	
             <div class="row">
               <div class="col-md-12">
                 <div class="post-container post-noborder">
@@ -952,74 +433,6 @@
     </div>
     <!-- end:footer -->
 
-    <!-- begin:modal-signin -->
-    <!--div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="modal-signin" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Sign in</h4>
-          </div>
-          <div class="modal-body">
-            <form role="form">
-              <div class="form-group">
-                <label for="emailAddress">Email address</label>
-                <input type="email" class="form-control input-lg" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control input-lg" placeholder="Password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="forget"> Keep me logged in
-                </label>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <p>Don't have account ? <a href="#modal-signup"  data-toggle="modal" data-target="#modal-signup">Sign up here.</a></p>
-            <input type="submit" class="btn btn-warning btn-block btn-lg" value="Sign in">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end:modal-signin -->
-
-    <!-- begin:modal-signup - ->
-    <div class="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="modal-signup" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Sign up</h4>
-          </div>
-          <div class="modal-body">
-            <form role="form">
-              <div class="form-group">
-                <input type="email" class="form-control input-lg" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control input-lg" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control input-lg" placeholder="Confirm Password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="agree"> Agree to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>
-                </label>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <p>Already have account ? <a href="#modal-signin" data-toggle="modal" data-target="#modal-signin">Sign in here.</a></p>
-            <input type="submit" class="btn btn-warning btn-block btn-lg" value="Sign up">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end:modal-signup -->
    
     <!-- Bootstrap core JavaScript
     ================================================== -->

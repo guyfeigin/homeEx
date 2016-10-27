@@ -65,7 +65,7 @@ EWD.application = {
 	 EWD.bootstrap3.nav.enable();
 	 
 	EWD.getFragment('about.html', 'about_Container');
-	EWD.getFragment('navlist1.html', 'navList'); 
+	//EWD.getFragment('navlist.html', 'navList'); 
 	EWD.getFragment('main.html', 'main_Container'); 
 	EWD.getFragment('searchfrag.html', 'search_Container'); 
 	EWD.getFragment('singlefrag.html', 'single_Container');
@@ -77,6 +77,12 @@ EWD.application = {
 	
 	EWD.initNavbar = function(){
 		 $('#navbar-username').hide();
+	};
+	EWD.updateNavBar = function(){
+		 $('#navbar-username').text("Welcome Guy");
+		 $('#navbar-username').show();
+		 $('#signin_Nav').hide();
+		 $('#signup_Nav').hide();
 	};
 	EWD.loadListing = function(messageObj){
 		//property vars
@@ -232,14 +238,18 @@ EWD.application = {
 			  toastr.success('Welcome !!! ');
 			  //EWD.loadListing(messageObj);
 			 // EWD.bootstrap3.nav.pageSwap("main_Nav");
+			 $('#modal-signin').modal('toggle');
+			 EWD.updateNavBar();
             }
           }
         }); 
+		
       });
 
       //$('#loginBtn').show();
 
     };
+	
   EWD.signUp = function() {
       //$('#ewd-loginPanel-title').text('EWD.js Monitor');
       document.getElementById('email').focus();
@@ -293,7 +303,7 @@ EWD.application = {
 
   onFragment: {
     // add handlers that fire after fragment contents are loaded into browser
-	'navlist1.html': function(messageObj) {
+	'navlist.html': function(messageObj) {
 	EWD.bootstrap3.nav.enable();
 	EWD.initNavbar();
 	},
@@ -326,7 +336,7 @@ EWD.application = {
       EWD.signUp();
     },
 	'logoutfrag.html': function(messageObj) {
-	 
+	 //
 	  $('#logoutBtn').click(function(e) {
 		   $('#navbar-username').hide();
 			EWD.sockets.sendMessage({
@@ -877,9 +887,9 @@ EWD.application = {
 
 	html = html + '</div>';
 	html = html + '</div>';
-	 $('#latestHouses').html(html);
+	$('#latestHouses').html(html);
 	 
-	  $('[data-toggle="tooltip"]').tooltip();
+	$('[data-toggle="tooltip"]').tooltip();
   },
   searchResults: function(messageObj) {
 	toastr.clear();
